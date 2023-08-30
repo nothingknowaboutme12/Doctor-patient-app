@@ -27,7 +27,7 @@ class _ReportPageState extends State<ReportPage> {
   int selectIndex = 0;
   final List<Widget> _pages = [
     const ReportUi(),
-    const TestPage(),
+    TestPage(),
   ];
   @override
   Widget build(BuildContext context) {
@@ -47,10 +47,9 @@ class _ReportPageState extends State<ReportPage> {
             selectIndex = value;
           });
         },
-        items: [
-          const BottomNavigationBarItem(
-              icon: Icon(Icons.report), label: "Result"),
-          const BottomNavigationBarItem(icon: Icon(Icons.report), label: "Test")
+        items: const [
+          BottomNavigationBarItem(icon: Icon(Icons.report), label: "Result"),
+          BottomNavigationBarItem(icon: Icon(Icons.report), label: "Test")
         ],
       ),
       body: _pages[selectIndex],
